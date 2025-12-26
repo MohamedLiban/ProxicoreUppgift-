@@ -6,12 +6,16 @@ Detta är en liten kundmodul byggd med Laravel och Livewire.
 
 ## Så här kör du projektet lokalt
 
+Md
+
+## Installation – kör lokalt
+
 ### 1. Klona repo
 
 ```bash
 git clone https://github.com/MohamedLiban/ProxicoreUppgift-.git
 cd ProxicoreUppgift-
-git checkout main    # eller Produktion om du vill
+git checkout main    # eller: git checkout Produktion
 2. Installera PHP‑beroenden
 
 Bash
@@ -19,29 +23,51 @@ Bash
 composer install
 php artisan key:generate
 3. Skapa .env och ställ in SQLite
+Projektet innehåller ingen .env.example, så skapa .env manuellt i projektroten.
 
-Bash
-
-cp .env.example .env   # om .env inte finns
-Öppna .env och ändra databasen till:
+Skapa filen .env och klistra in detta innehåll:
 
 
 Env
 
+APP_NAME="Proxicore CRM"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+APP_LOCALE=sv
+APP_FALLBACK_LOCALE=sv
+APP_FAKER_LOCALE=en_US
+
+APP_MAINTENANCE_DRIVER=file
+
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+
 DB_CONNECTION=sqlite
 DB_DATABASE=database/database.sqlite
-Skapa databasen:
+
+SESSION_DRIVER=database
+SESSION_LIFETIME=120
+
+QUEUE_CONNECTION=database
+CACHE_STORE=database
+
+VITE_APP_NAME="${APP_NAME}"
+Kör sedan:
+
+
+Bash
+
+php artisan key:generate
+Skapa databasen och kör migreringar:
 
 
 Bash
 
 mkdir -p database
 touch database/database.sqlite
-Kör migreringar:
-
-
-Bash
-
 php artisan migrate
 4. Installera frontend‑beroenden
 
