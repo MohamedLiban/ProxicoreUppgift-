@@ -1,13 +1,5 @@
 Md
 
-# Proxicore – kör lokalt
-
-Detta är en liten kundmodul byggd med Laravel och Livewire.
-
-## Så här kör du projektet lokalt
-
-Md
-
 ## Installation – kör lokalt
 
 ### 1. Klona repo
@@ -89,3 +81,4 @@ php artisan serve
 http://127.0.0.1:8000/customers – kundlista
 
 http://127.0.0.1:8000/customers/create – skapa ny kund
+
